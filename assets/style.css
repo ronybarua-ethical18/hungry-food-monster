@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700;900&display=swap');
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    
+    font-family: 'Roboto', sans-serif;
+    width:80%;
+    margin:30px auto;
+}
+button{
+    background-color:tomato;
+    color:#fff;
+    outline:none;
+    border:none;
+    padding:10px;
+    cursor: pointer;
+}
+span{
+    font-size:35px;
+    font-weight: bold;
+    color: tomato;
+}
+input{
+    outline: none;
+    color:gray;
+    padding:8px;
+}
+ul{
+    list-style: none;
+}
+#navbar li{
+    display: inline-block;
+    margin-right: 10px;
+}
+ h3{
+   
+    margin-bottom: 15px;
+    font-size:25px;
+    font-weight: 500;
+}
+h2{
+    font-size:30px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+p{
+    font-size:16px;
+    margin-bottom: 20px;
+}
+b{
+    color:gray;
+   
+}
+i{
+    color: tomato;
+    margin-right: 10px;
+}
+a{
+    text-decoration: none;
+    font-size:16px;
+    font-weight: 500;
+    color:#000;
+}
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#search-item{
+    text-align: center;
+}
+#meal-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:10px;
+    border-radius: 20px; 
+    align-content: center;
+    justify-items: center;
+}
+.meal-width{
+    width:280px;
+    padding:20px;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.6);
+    border-radius: 10px;
+}
+img{
+    max-width:100%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+}
+/* #meal-details{
+    width:50%;
+    margin:auto;
+    box-shadow: 5px 5px 10px #00000099;
+    padding:20px;
+    height:400px;
+    display: none;
+    overflow: scroll;
+    
+} */
+#search-item{
+    margin-bottom: 50px;
+}
+.container-main#blur.active {
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
+}
+.popup {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height:500px;
+    overflow: scroll;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    background:#fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+.popup.active {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+.ingredient{
+    margin-bottom: 20px;
+}
