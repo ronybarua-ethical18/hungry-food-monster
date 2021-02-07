@@ -1,4 +1,7 @@
+/* google font link  */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700;900&display=swap');
+
+/* basic styling start from here  */
 *{
     padding:0;
     margin:0;
@@ -29,10 +32,6 @@ input{
 }
 ul{
     list-style: none;
-}
-#navbar li{
-    display: inline-block;
-    margin-right: 10px;
 }
 li{
     margin-bottom: 8px;
@@ -72,11 +71,18 @@ img{
     background-position: center;
     margin-bottom: 20px;
 }
+/* basic styling end here  */
+
+/* custom styling start here  */
 #navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+}
+#navbar li{
+    display: inline-block;
+    margin-right: 10px;
 }
 #search-item{
     text-align: center;
@@ -96,7 +102,6 @@ img{
     box-shadow: 5px 5px 10px rgba(0,0,0,0.6);
     border-radius: 10px;
 }
-
 #search-item{
     margin-bottom: 50px;
 }
@@ -130,3 +135,4 @@ img{
 .ingredient{
     margin-bottom: 20px;
 }
+/* custom styling end here  */

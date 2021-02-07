@@ -1,3 +1,4 @@
+// get searched item from api 
 const displayMeal = () => {
     const search = document.getElementById('search');
     const searchValue = search.value;
@@ -12,9 +13,8 @@ const displayMeal = () => {
                     const singleMeal = document.getElementById('meal-list');
                     data.meals.forEach(meal => {
                         const mealDiv = document.createElement('div');
-                        const mealInfo = `
-                                <img src ="${meal.strMealThumb}">
-                                <h3 id="${meal.idMeal}">${meal.strMeal}</h3> `;
+                        const mealInfo = `<img src ="${meal.strMealThumb}">
+                        <h3 id="${meal.idMeal}">${meal.strMeal}</h3>`;
                         mealDiv.innerHTML = mealInfo;
                         mealDiv.className = 'meal-width'
                         singleMeal.appendChild(mealDiv);
@@ -48,6 +48,7 @@ const getItemById = (mealId) => {
 // getting meal details including ingredients for individual meal 
 const renderSingleMeal = (meal) => {
     const mealDetails = document.getElementById('meal-details');
+
     //fetching ingredients for individual meal
     const Ingredients = [];
     for (let i = 1; i <= 20; i++) {
@@ -77,6 +78,8 @@ const toggle = () => {
     toggleIndividualId('blur');
     toggleIndividualId('meal-details');
 }
+
+// reload the page before new search 
 const reloadPage = () => {
     document.location.reload();
 }
