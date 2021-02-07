@@ -66,6 +66,12 @@ a{
     font-weight: 500;
     color:#000;
 }
+img{
+    max-width:100%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+}
 #navbar{
     display: flex;
     justify-content: space-between;
@@ -90,22 +96,7 @@ a{
     box-shadow: 5px 5px 10px rgba(0,0,0,0.6);
     border-radius: 10px;
 }
-img{
-    max-width:100%;
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 20px;
-}
-/* #meal-details{
-    width:50%;
-    margin:auto;
-    box-shadow: 5px 5px 10px #00000099;
-    padding:20px;
-    height:400px;
-    display: none;
-    overflow: scroll;
-    
-} */
+
 #search-item{
     margin-bottom: 50px;
 }

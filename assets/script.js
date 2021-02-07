@@ -1,9 +1,8 @@
-
 const displayMeal = () => {
     const search = document.getElementById('search');
     const searchValue = search.value;
     if (searchValue === '') {
-        alert('Please enter dish name');
+        alert('Please enter a dish name');
     }
     else {
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
@@ -49,7 +48,6 @@ const getItemById = (mealId) => {
 // getting meal details including ingredients for individual meal 
 const renderSingleMeal = (meal) => {
     const mealDetails = document.getElementById('meal-details');
-
     //fetching ingredients for individual meal
     const Ingredients = [];
     for (let i = 1; i <= 20; i++) {
@@ -73,8 +71,9 @@ const renderSingleMeal = (meal) => {
 const toggleIndividualId = (id) => {
     return document.getElementById(id).classList.toggle('active');
 }
+
+// calling for the toggle value for individual id
 const toggle = () => {
-    // calling for the toggle value for individual id
     toggleIndividualId('blur');
     toggleIndividualId('meal-details');
 }
