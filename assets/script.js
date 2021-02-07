@@ -7,25 +7,29 @@ const displayMeal = () => {
     }
     else {
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
-            .then(response => response.json())  
+            .then(response => response.json())
             .then(data => {
-                console.log(data);
-                const singleMeal = document.getElementById('meal-list');
-                data.meals.forEach(meal => {
-                    const mealDiv = document.createElement('div');
-                    const mealInfo = `
-                        <img src ="${meal.strMealThumb}">
-                        <h3 id="${meal.idMeal}">${meal.strMeal}</h3> `;
-                    mealDiv.innerHTML = mealInfo;
-                    mealDiv.className = 'meal-width'
-                    singleMeal.appendChild(mealDiv);
+                if (data.meals != null) {
+                    const singleMeal = document.getElementById('meal-list');
+                    data.meals.forEach(meal => {
+                        const mealDiv = document.createElement('div');
+                        const mealInfo = `
+                                <img src ="${meal.strMealThumb}">
+                                <h3 id="${meal.idMeal}">${meal.strMeal}</h3> `;
+                        mealDiv.innerHTML = mealInfo;
+                        mealDiv.className = 'meal-width'
+                        singleMeal.appendChild(mealDiv);
 
-                    // adding event hadler for showing meal details 
-                    mealDiv.addEventListener('click', function () {
-                        getItemById(`${meal.idMeal}`);
-                        toggle();
-                    });
-                })
+                        // adding event hadler for showing meal details 
+                        mealDiv.addEventListener('click', function () {
+                            getItemById(`${meal.idMeal}`);
+                            toggle();
+                        });
+                    })
+                }
+                else {
+                    alert('Searched item is not found, try new dish');
+                }
             })
     }
     search.value = '';
@@ -74,6 +78,6 @@ const toggle = () => {
     toggleIndividualId('blur');
     toggleIndividualId('meal-details');
 }
-const reloadPage = () =>{
+const reloadPage = () => {
     document.location.reload();
 }
