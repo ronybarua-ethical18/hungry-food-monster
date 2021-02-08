@@ -9,8 +9,9 @@ const displayMeal = () => {
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
             .then(response => response.json())
             .then(data => {
-                if (data.meals != null) {
+                if (data.meals !== null) {
                     const singleMeal = document.getElementById('meal-list');
+                    singleMeal.innerHTML = '';
                     data.meals.forEach(meal => {
                         const mealDiv = document.createElement('div');
                         const mealInfo = `<img src ="${meal.strMealThumb}">
@@ -77,9 +78,4 @@ const toggleIndividualId = (id) => {
 const toggle = () => {
     toggleIndividualId('blur');
     toggleIndividualId('meal-details');
-}
-
-// reload the page before new search 
-const reloadPage = () => {
-    document.location.reload();
 }
