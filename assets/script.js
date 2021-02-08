@@ -3,7 +3,7 @@ const displayMeal = () => {
     const search = document.getElementById('search');
     const searchValue = search.value;
     if (searchValue === '') {
-        alert('Please enter a dish name');
+        showErrorMessage('Please enter a dish name');
     }
     else {
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
@@ -28,7 +28,7 @@ const displayMeal = () => {
                     })
                 }
                 else {
-                    alert('Searched item is not found, try new dish');
+                    showErrorMessage('Searched Item is not found, try new dish');
                 }
             })
     }
@@ -78,4 +78,8 @@ const toggleIndividualId = (id) => {
 const toggle = () => {
     toggleIndividualId('blur');
     toggleIndividualId('meal-details');
+}
+const showErrorMessage = (error) =>{
+    const errorMessage = document.getElementById('error-message');
+    errorMessage.innerText = error;
 }

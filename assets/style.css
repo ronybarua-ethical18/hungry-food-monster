@@ -105,6 +105,10 @@ img{
 #search-item{
     margin-bottom: 50px;
 }
+#error-message{
+    text-align: center;
+    color:tomato;
+}
 .container-main#blur.active {
     filter: blur(5px);
     pointer-events: none;
