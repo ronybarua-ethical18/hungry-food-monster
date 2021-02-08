@@ -55,7 +55,7 @@ const renderSingleMeal = (meal) => {
     const Ingredients = [];
     for (let i = 1; i <= 20; i++) {
         if (meal[`strIngredient${i}`]) {
-            Ingredients.push(`${meal[`strIngredient${i}`]}`);
+            Ingredients.push(`${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`);
         }
         else {
             break;
