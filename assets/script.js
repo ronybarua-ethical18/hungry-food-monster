@@ -2,16 +2,17 @@
 const displayMeal = () => {
     const search = document.getElementById('search');
     const searchValue = search.value;
+    const singleMeal = document.getElementById('meal-list');
+    singleMeal.innerHTML = ''; //auto refresh single meal content while error message gone
+    showErrorMessage(''); //auto refresh error message
     if (searchValue === '') {
-        alert('Please enter a dish name');
+        showErrorMessage('Please enter a dish name!');
     }
     else {
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
             .then(response => response.json())
             .then(data => {
                 if (data.meals !== null) {
-                    const singleMeal = document.getElementById('meal-list');
-                    singleMeal.innerHTML = '';
                     data.meals.forEach(meal => {
                         const mealDiv = document.createElement('div');
                         const mealInfo = `<img src ="${meal.strMealThumb}">
@@ -28,7 +29,7 @@ const displayMeal = () => {
                     })
                 }
                 else {
-                    alert('Searched Item is not found, try new dish');
+                    showErrorMessage('Searched Item is not found, try new dish!');
                 }
             })
     }
@@ -78,4 +79,10 @@ const toggleIndividualId = (id) => {
 const toggle = () => {
     toggleIndividualId('blur');
     toggleIndividualId('meal-details');
+}
+
+// handling error message 
+const showErrorMessage = (error) => {
+    const errorMessage = document.getElementById('error-message');
+    errorMessage.innerText = error;
 }
